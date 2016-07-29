@@ -9,7 +9,7 @@
     ],
   "outputs": {
     "result": {
-      "value": "Hello World II",
+      "value": "Hello World III",
       "type":  "string"
     }
   }
