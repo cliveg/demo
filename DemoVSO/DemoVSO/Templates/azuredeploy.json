@@ -7,6 +7,10 @@
     },
     "resources": [
     ],
-    "outputs": {
+  "outputs": {
+    "result": {
+      "value": "Hello World",
+      "type":  "string"
     }
+  }
 }
