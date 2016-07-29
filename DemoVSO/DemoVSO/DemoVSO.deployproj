@@ -28,6 +28,8 @@
     <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="checks\validate.ps1" />
+    <None Include="checks\validateParameters.txt" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
