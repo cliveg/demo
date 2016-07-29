@@ -1,0 +1,20 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "AzAdmin"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/c1d6b3ff-959d-4354-b3d1-874876f6a011/resourceGroups/KeyVaultDemo/providers/Microsoft.KeyVault/vaults/ENMAXDemo"
+        },
+        "secretName": "MySecret"
+      }
+    },
+    "windowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    }
+  }
+}
