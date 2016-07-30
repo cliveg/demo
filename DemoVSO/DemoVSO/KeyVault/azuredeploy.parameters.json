@@ -8,7 +8,7 @@
     "adminPassword": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/c1d6b3ff-959d-4354-b3d1-874876f6a011/resourceGroups/KeyVaultDemo/providers/Microsoft.KeyVault/vaults/ENMAXDemo"
+          "id": "/subscriptions/c1d6b3ff-959d-4354-b3d1-874876f6a011/resourceGroups/KeyVaultDemo/providers/Microsoft.KeyVault/vaults/KVDemo"
         },
         "secretName": "MySecret"
       }

@@ -8,10 +8,10 @@
 New-AzureRmResourceGroup -Name KeyVaultDemo -Location westus -Force
 
 #create the keyvault. note that this command is not idempotent.
-$vault = New-AzureRmKeyVault -VaultName ENMAXDemo -ResourceGroupName KeyVaultDemo -EnabledForTemplateDeployment -Location westus
+$vault = New-AzureRmKeyVault -VaultName KVDemo -ResourceGroupName KeyVaultDemo -EnabledForTemplateDeployment -Location westus
 
 #create/set the secret
-$secret = Set-AzureKeyVaultSecret -VaultName ENMAXDemo -Name MySecret -SecretValue $password
+$secret = Set-AzureKeyVaultSecret -VaultName KVDemo -Name MySecret -SecretValue $password
 
 #echo the vault id
 Write-Host Vault Id: $vault.ResourceId
@@ -19,11 +19,11 @@ Write-Host Vault Id: $vault.ResourceId
 #echo the vault secret
 Write-Host Secret Id: $secret.Name
 
-$TemplateUri = "https://raw.githubusercontent.com/rjmax/TechReady23/master/src/KeyVault/azuredeploy.json"
-$TemplateParameterUri = "https://raw.githubusercontent.com/rjmax/TechReady23/master/src/KeyVault/azuredeploy.parameters.json"
+$TemplateUri = "https://raw.githubusercontent.com/cliveg/demo/master/DemoVSO/DemoVSO/KeyVault/azuredeploy.json"
+$TemplateParameterUri = "https://raw.githubusercontent.com/cliveg/demo/master/DemoVSO/DemoVSO/KeyVault/azuredeploy.parameters.json"
 
 #Deploy using the secret
-New-AzureRmResourceGroupDeployment -ResourceGroupName KeyVaultDemo -TemplateUri $TemplateUri -TemplateParameterUri $TemplateParameterUri
+New-AzureRmResourceGroupDeployment -ResourceGroupName KeyVaultDemoVM -TemplateUri $TemplateUri -TemplateParameterUri $TemplateParameterUri
 
 #cleanup non-idempotent resources
-#Remove-AzureRmKeyVault -VaultName TR23 -ResourceGroupName KeyVaultDemo -Force
+#Remove-AzureRmKeyVault -VaultName KVDemo -ResourceGroupName KeyVaultDemo -Force
